@@ -1,6 +1,6 @@
 /*!
- * Stem - Minimal wrapper with a really basic caching mechanism
- * https://github.com/colbyfayock/stem
+ * Stem - Minimal Handlebars wrapper with a really basic caching mechanism
+ * https://colbyfayock.github.io/stem/
  * Version: 0.0.1
  * @colbyfayock - colbyfayock.com
  */

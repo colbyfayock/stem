@@ -1,12 +1,12 @@
 {
   "name": "Stem",
-  "description": "Minimal wrapper with a really basic caching mechanism",
+  "description": "Minimal Handlebars wrapper with a really basic caching mechanism",
   "main": "stem/stem.min.js",
   "authors": [
     "@colbyfayock - colbyfayock.com"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/colbyfayock/stem",
+  "homepage": "https://colbyfayock.github.io/stem/",
   "private": true,
   "ignore": [
     "**/.*",
