@@ -1,3 +1,10 @@
+/*!
+ * Stem - Minimal wrapper with a really basic caching mechanism
+ * https://github.com/colbyfayock/stem
+ * Version: 0.0.1
+ * @colbyfayock - colbyfayock.com
+ */
+
 window.Stem = function(selector) {
 
     var _this = this;
