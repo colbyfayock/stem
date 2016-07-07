@@ -53,13 +53,19 @@ window.Stem = function(selector) {
         if ( !_this.precompiled ) return false;
 
         if ( _this.is_stale(_this.precompiled, 'precompiled', 'html') ) {
+            console.log('Precompiled is stale, compiling fresh template');
             _this.cache.precompiled = _this.precompiled;
             _this.compile(_this.cache.precompiled);
+        } else {
+        	console.log('Precompiled is cached, using existing template');
         }
 
         if ( _this.is_stale(data, 'data', 'json') ) {
+            console.log('Data is stale, rendering fresh template');
             _this.cache.data = data;
             _this.render(_this.cache.data);
+        } else {
+        	console.log('Data is cached, using existing template');
         }
 
         return _this.cache.render;
