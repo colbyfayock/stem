@@ -1,0 +1,172 @@
+<html>
+
+    <title>Stem</title>
+
+<body>
+
+<div id="body"></div>
+
+<p>
+    <a id="trigger1" href="#">Trigger Cached Render</a>
+</p>
+<p>
+    <a id="trigger2" href="#">Trigger New Render</a>
+</p>
+<p>
+    Check your web console for a (very) little bit of verbosity
+</p>
+
+<h2>What makes this work?</h2>
+
+<pre><code>&lt;div id="body"&gt;&lt;/div&gt;
+
+&lt;script id="welcome-message" type="text/x-handlebars-template"&gt;
+    &lt;h1&gt;Hi there, I'm {{ name }}&lt;/h1&gt;
+    &lt;h2&gt;Some cool things to do are:&lt;/h2&gt;
+    {{&gt; list}}
+&lt;/script&gt;
+
+&lt;script id="list" type="text/x-handlebars-template"&gt;
+    {{# if things }}
+        &lt;ul&gt;
+            {{#things}}
+                &lt;li&gt;{{name}}&lt;/li&gt;
+            {{/things}}
+        &lt;/ul&gt;
+    {{/ if }}
+&lt;/script&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"&gt;&lt;/script&gt;
+&lt;script src="stem/stem.demo.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+stpl.welcome_message = new Stem('#welcome-message');
+Handlebars.registerPartial('list', document.getElementById('list').innerHTML);
+
+document.getElementById('body').innerHTML = stpl.welcome_message.grab({
+    name: 'Colby',
+    things: [
+        {
+            name: 'Go to school'
+        },
+        {
+            name: 'Read a book'
+        },
+        {
+            name: 'Be nice to your mom'
+        }
+    ]
+});
+
+document.getElementById('trigger1').addEventListener('click', function(){
+    document.getElementById('body').innerHTML = stpl.welcome_message.grab({
+        name: 'Colby',
+        things: [
+            {
+                name: 'Go to school'
+            },
+            {
+                name: 'Read a book'
+            },
+            {
+                name: 'Be nice to your mom'
+            }
+        ]
+    });
+});
+
+document.getElementById('trigger2').addEventListener('click', function(){
+    document.getElementById('body').innerHTML = stpl.welcome_message.grab({
+        name: 'Not Colby',
+        things: [
+            {
+                name: 'Don\'t go to school'
+            },
+            {
+                name: 'Don\'t read books'
+            },
+            {
+                name: 'Still, you should be nice to your mom'
+            }
+        ]
+    });
+});&lt;/script&gt;</code></pre>
+
+
+<script id="welcome-message" type="text/x-handlebars-template">
+    <h1>Hi there, I'm {{ name }}</h1>
+    <h2>Some cool things to do are:</h2>
+    {{> list}}
+</script>
+
+<script id="list" type="text/x-handlebars-template">
+    {{# if things }}
+        <ul>
+            {{#things}}
+                <li>{{name}}</li>
+            {{/things}}
+        </ul>
+    {{/ if }}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="stem/stem.demo.js"></script>
+
+<script>
+stpl.welcome_message = new Stem('#welcome-message');
+Handlebars.registerPartial('list', document.getElementById('list').innerHTML);
+
+document.getElementById('body').innerHTML = stpl.welcome_message.grab({
+    name: 'Colby',
+    things: [
+        {
+            name: 'Go to school'
+        },
+        {
+            name: 'Read a book'
+        },
+        {
+            name: 'Be nice to your mom'
+        }
+    ]
+});
+
+document.getElementById('trigger1').addEventListener('click', function(){
+    document.getElementById('body').innerHTML = stpl.welcome_message.grab({
+        name: 'Colby',
+        things: [
+            {
+                name: 'Go to school'
+            },
+            {
+                name: 'Read a book'
+            },
+            {
+                name: 'Be nice to your mom'
+            }
+        ]
+    });
+});
+
+document.getElementById('trigger2').addEventListener('click', function(){
+    document.getElementById('body').innerHTML = stpl.welcome_message.grab({
+        name: 'Not Colby',
+        things: [
+            {
+                name: 'Don\'t go to school'
+            },
+            {
+                name: 'Don\'t read books'
+            },
+            {
+                name: 'Still, you should be nice to your mom'
+            }
+        ]
+    });
+});
+
+</script>
+
+</body>
+
+</html>
