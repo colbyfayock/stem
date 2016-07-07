@@ -1,7 +1,7 @@
 {
   "name": "Stem",
-  "description": "Minimal wrapper with a really basic caching mechanism",
-  "homepage": "https://github.com/colbyfayock/stem",
+  "description": "Minimal Handlebars wrapper with a really basic caching mechanism",
+  "homepage": "https://colbyfayock.github.io/stem/",
   "author": "@colbyfayock - colbyfayock.com",
   "version": "0.0.1",
   "devDependencies": {
